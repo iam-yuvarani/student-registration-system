@@ -34,10 +34,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: github-pages
-          path: ./dist
+  uses: actions/upload-pages-artifact@v3
+  with:
+    name: student-registration-site
+    path: ./dist
 
   deploy:
     environment:
@@ -49,5 +49,7 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  id: deployment
+  uses: actions/deploy-pages@v4
+  with:
+    artifact_name: student-registration-site
